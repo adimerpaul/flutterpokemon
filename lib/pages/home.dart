@@ -17,28 +17,43 @@ class _MyHomeState extends State<MyHome> {
       appBar: AppBar(
         title: const Text('Home'),
       ),
-      body: Column(
+      body: Row(
         children: [
-          ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  items.add('Item ${items.length + 1}');
-                });
-              },
-              child: const Text('Add Item')
+          Flexible(
+            child: Container(
+              color: Colors.red,
+            ),
           ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: items.length,
-              itemBuilder: (context, index) {
-                return ListTile(
-                  title: Text(items[index]),
-                );
-              },
+          Flexible(
+            flex: 2,
+            child: Container(
+              color: Colors.blue,
             ),
           )
         ],
       ),
+      // body: Column(
+      //   children: [
+      //     ElevatedButton(
+      //         onPressed: () {
+      //           setState(() {
+      //             items.add('Item ${items.length + 1}');
+      //           });
+      //         },
+      //         child: const Text('Add Item')
+      //     ),
+      //     Expanded(
+      //       child: ListView.builder(
+      //         itemCount: items.length,
+      //         itemBuilder: (context, index) {
+      //           return ListTile(
+      //             title: Text(items[index]),
+      //           );
+      //         },
+      //       ),
+      //     )
+      //   ],
+      // ),
       // ListView(
       //   children: [
       //     Text('Item A'),
